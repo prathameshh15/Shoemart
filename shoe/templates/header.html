@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- online bootstrap css file -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">-->
+    
+    <!-- offline bootstrap css file -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Shoemart</title>
+</head>
+<body>
+    <!-- <div class="container-fluid"></div>      
+
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <h1>hello</h1>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <h2>bye</h2>
+            </div>
+        </div>
+
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="class-md-12 mt-3">
+
+                <nav class="navbar navbar-expand-lg bg-body-tertiary-primary" style="background-color:#e3f2fd;">
+
+                    <div class="container-fluid">
+
+                        <a class="navbar-brand" href="/index"><img src="{% static 'images/logo.jpg' %}" alt="" width="60px" height="60px"></a>
+                      
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            
+                          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                             <li class="nav-item">
+                               <a class="nav-link" href="/index">Home</a>
+                             </li>
+
+                             <li class="nav-item">
+                               <a class="nav-link" href="/about">About</a>
+                             </li>
+
+                             <li class="nav-item">
+                                <a class="nav-link "href="/viewcart">Cart</a>
+                             </li>
+                          {% if user.is_authenticated %}
+                             <li class="nav-item">
+                              <a class="nav-link "href="/logout">Logout</a>
+                             </li>
+                          {% else %}
+                             <li class="nav-item">
+                               <a class="nav-link" href="/login">Login</a>
+                             </li>
+
+                             <li class="nav-item">
+                                <a class="nav-link "href="/register">Register</a>
+                             </li>
+                          {% endif %}
+                             <li class="nav-item">
+                                <a class="nav-link "href="/contact">Contact us</a>
+                             </li>
+
+                          </ul>
+
+                        <form action="/search" class="d-flex" role="search">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="find" value="{{value}}">
+                          <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+
+                        </div>
+
+                    </div>
+                    
+                </nav> 
+
+            </div>
+        </div> <!--Navbar end-->

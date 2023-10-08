@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- online bootstrap css file -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">-->
+    
+    <!-- offline bootstrap css file -->
+    <link rel="stylesheet" href="{% static 'css\bootstrap.min.css' %}">
+    <title>Ekart|Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4 mt-5 mx-auto shadow p-5">
+                <h2 class="mb-3 text-center text-danger">User Registration</h2>
+                {% if errormsg %}
+                  <div class="alert alert-danger" role="alert">
+                    {{errormsg}}
+                  </div>
+                {% endif %}
+                {% if succ %}
+                  <div class="alert alert-success" role="alert">
+                    {{succ}}
+                  </div>
+                {% endif %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label"><strong>Username</strong></label>
+                        <input type="text" class="form-control" name="uname" id="Input1" placeholder="name123">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input2" class="form-label"><strong>Password</strong></label>
+                        <input type="password" class="form-control" name="upass" id="Input2" placeholder="Enter Your Password">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input3" class="form-label"><strong>Confirm Password</strong></label>
+                        <input type="password" class="form-control" name="ucpass" id="Input3" placeholder="Enter Your Password">                        
+                    </div>
+                    <div class="mb-3">                        
+                        <input type="submit" class="btn btn-outline-primary" value="Register">
+                        &nbsp; Already have an account?&nbsp;&nbsp;&nbsp;<a href="/login" style="text-decoration: none;">Login</a>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- online bootstrap js file -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>-->
+    
+    <!-- offline bootstrap js file -->
+    <script src="{% static 'js\bootstrap.min.js' %}"></script>
+    <script src="{% static 'js\popper.js' %}"></script>
+</body>
+</html>

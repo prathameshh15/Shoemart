@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-4">
+        <h3>Your Order had been Placed Successfully.</h3>
+        <p>Your Order Tracking Id: {{oid}}</p>
+        <a href="/index"><button class="btn btn-outline-success">Shop More</button></a>
+    </div>
+</div> <!--Details End-->
+<br>
+{% endblock 'main' %}
